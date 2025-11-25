@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-setup",
+  "version": "1.0.0",
+  "description": "Script de configuração do portfólio",
+  "scripts": {
+    "check-node": "node -v && echo Node.js está instalado!",
+    "setup": "npm install && echo Dependências instaladas com sucesso!",
+    "start-dev": "npm run dev"
+  }
+}
