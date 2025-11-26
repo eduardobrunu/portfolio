@@ -10,7 +10,6 @@ const categoriasHabilidades = [
     cor: 'from-purple-500 to-violet-600',
     habilidades: [
       { nome: 'PHP', nivel: 90, anos: '2+' },
-      { nome: 'Node.js', nivel: 80, anos: '1+' },
       { nome: 'TypeScript', nivel: 85, anos: '1+' },
       { nome: 'JavaScript', nivel: 90, anos: '2+' },
     ]

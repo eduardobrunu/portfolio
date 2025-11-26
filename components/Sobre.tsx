@@ -8,18 +8,18 @@ const experiencias = [
     empresa: 'Microton',
     cargo: 'Desenvolvedor Júnior',
     periodo: 'Outubro 2024 - Atual',
-    localizacao: 'Presidente Prudente, SP',
-    descricao: 'Desenvolvimento e evolução do WMS da Microton com foco em Fintechs e operações logísticas: estoque, pedidos, inventário e pallets. Entregas com PHP, MySQL, TypeScript e JavaScript para garantir escalabilidade e segurança.',
-    tecnologias: ['PHP', 'MySQL', 'TypeScript', 'JavaScript', 'Node.js', 'WMS'],
+    localizacao: 'Blumenau, SC',
+    descricao: 'Desenvolvimento de soluções de mobilidade corporativa para força de vendas, logística e gestão em campo. Evolução de sistemas premiados (MTVendor\'s, MTWms, MTColeta, MTApontaz) com PHP e TypeScript, criando APIs, automações e integrações que impactam operações comerciais diárias.',
+    tecnologias: ['PHP', 'TypeScript', 'JavaScript', 'Computação Móvel', 'APIs'],
     atual: true,
   },
   {
-    empresa: 'Cronos Soluções para Fintechs',
+    empresa: 'CronosBank Fintech',
     cargo: 'Desenvolvedor Júnior',
     periodo: 'Junho 2023 - Junho 2024',
     localizacao: 'Presidente Prudente, SP',
-    descricao: 'Desenvolvimento com PHP, HTML/CSS e JavaScript. Aprimoramento de conhecimentos em segurança da informação e gestão de infraestrutura de TI, proporcionando soluções eficientes e seguras para o ambiente financeiro.',
-    tecnologias: ['PHP', 'HTML/CSS', 'JavaScript', 'Segurança da Informação', 'Infraestrutura TI'],
+    descricao: 'Desenvolvimento em plataforma Banking as a Service (BaaS) com subadquirência white label certificada PCI DSS. Atuação em soluções de pagamentos, conta digital, PIX, cartões pré-pagos e integrações bancárias. Experiência hands-on com segurança em ambientes financeiros críticos.',
+    tecnologias: ['PHP', 'JavaScript', 'BaaS', 'PCI DSS', 'Integração Bancária', 'Fintech'],
     atual: false,
   },
   {
@@ -27,8 +27,8 @@ const experiencias = [
     cargo: 'Suporte Técnico',
     periodo: '2022 - 2023',
     localizacao: 'Presidente Prudente, SP',
-    descricao: 'Desenvolvimento de competências em virtualização e gestão de projetos de software. Experiência que permitiu construir uma base sólida para o crescimento na área de tecnologia.',
-    tecnologias: ['Virtualização', 'Gestão de Projetos', 'Suporte Técnico'],
+    descricao: 'Suporte em provedor de internet com 25 anos no mercado. Infraestrutura de fibra ótica, virtualização de servidores e gestão de incidentes. Primeira experiência profissional que construiu base sólida em troubleshooting, redes e atendimento ao cliente.',
+    tecnologias: ['Fibra Ótica', 'Virtualização', 'Suporte Técnico', 'Redes'],
     atual: false,
   },
 ];
@@ -48,7 +48,7 @@ export default function About() {
             Sobre <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text">Mim</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Trajetória focada em transformar desafios regulatórios e operacionais das Fintechs em produtos digitais confiáveis e escaláveis.
+            17 anos explorando tecnologia. Da curiosidade ao código que impacta milhares de usuários. Desenvolvedor focado em criar soluções de mobilidade corporativa eficientes e escaláveis.
           </p>
         </motion.div>
 
@@ -63,16 +63,16 @@ export default function About() {
           <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600">
             <h3 className="text-2xl font-bold text-white mb-4 text-center">Desenvolvedor Júnior</h3>
             <p className="text-gray-300 leading-relaxed mb-4 text-left">
-              Na Microton, traduzo requisitos da cadeia logística e financeira em APIs, rotinas de inventário e dashboards que suportam controle de estoque, pedidos e produtos com precisão operacional.
+              Na Microton (40+ anos no mercado), desenvolvo soluções de mobilidade corporativa que transformam operações de vendas, logística e gestão em campo. MTVendor's, MTWms, MTColeta, MTApontaz - sistemas premiados que impactam milhares de usuários.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6 text-left">
-              Planejo entregas com PHP, MySQL e TypeScript, implementando automações que aumentam a resiliência do WMS e diminuem o tempo de resposta das solicitações em produção.
+              Trabalho com PHP e TypeScript criando APIs resilientes, automações inteligentes e integrações críticas que sustentam operações comerciais diárias.
             </p>
             <ul className="text-sm text-gray-300 space-y-2 text-left list-none">
-              <li>• Integrações bancárias e logísticas com foco em segurança e auditoria.</li>
-              <li>• Testes automatizados, deploys contínuos e monitoramento proativo em ambientes críticos.</li>
-              <li>• Conexão entre suporte técnico, produto e engenharia para resolver incidentes sem interrupção.</li>
-              <li>• Mentoria e documentação para manutenção evolutiva das plataformas.</li>
+              <li>• Desenvolvimento de funcionalidades para força de vendas mobile e gestão de estoque.</li>
+              <li>• Integrações com sistemas legados e otimização de performance em ambientes de produção.</li>
+              <li>• Manutenção evolutiva de plataformas com foco em estabilidade e escalabilidade.</li>
+              <li>• Colaboração com equipe multidisciplinar para entrega contínua de valor.</li>
             </ul>
           </div>
         </motion.div>
