@@ -11,67 +11,69 @@ const categoriasHabilidades = [
     habilidades: [
       { nome: 'PHP', nivel: 90, anos: '2+' },
       { nome: 'TypeScript', nivel: 85, anos: '1+' },
-      { nome: 'JavaScript', nivel: 90, anos: '2+' },
+      { nome: 'JavaScript (ES6+)', nivel: 90, anos: '2+' },
+      { nome: 'RESTful APIs', nivel: 85, anos: '2+' },
     ]
   },
   {
-    titulo: 'Database & Storage',
-    icone: Database,
-    cor: 'from-violet-500 to-indigo-600',
-    habilidades: [
-      { nome: 'MySQL', nivel: 85, anos: '2+' },
-      { nome: 'SQL', nivel: 85, anos: '2+' },
-      { nome: 'Database Design', nivel: 80, anos: '1+' },
-    ]
-  },
-  {
-    titulo: 'Frontend',
+    titulo: 'Frontend & UI',
     icone: Code2,
     cor: 'from-indigo-500 to-purple-600',
     habilidades: [
+      { nome: 'React & Next.js', nivel: 85, anos: '1+' },
       { nome: 'HTML5/CSS3', nivel: 90, anos: '2+' },
-      { nome: 'Responsive Design', nivel: 85, anos: '2+' },
-      { nome: 'UI/UX', nivel: 75, anos: '1+' },
+      { nome: 'Responsive Design', nivel: 90, anos: '2+' },
+      { nome: 'Tailwind CSS', nivel: 85, anos: '1+' },
     ]
   },
   {
-    titulo: 'Segurança & Infraestrutura',
+    titulo: 'Database & DevOps',
+    icone: Database,
+    cor: 'from-violet-500 to-indigo-600',
+    habilidades: [
+      { nome: 'SQL & MySQL', nivel: 85, anos: '2+' },
+      { nome: 'Git & GitHub', nivel: 90, anos: '2+' },
+      { nome: 'Docker', nivel: 75, anos: '1+' },
+    ]
+  },
+  {
+    titulo: 'Sistemas Críticos',
     icone: Shield,
     cor: 'from-purple-600 to-violet-700',
     habilidades: [
-      { nome: 'Segurança da Informação', nivel: 75, anos: '1+' },
-      { nome: 'Virtualização', nivel: 70, anos: '1+' },
-      { nome: 'Windows Server', nivel: 75, anos: '1+' },
+      { nome: 'Banking as a Service', nivel: 80, anos: '1+' },
+      { nome: 'Computação Móvel', nivel: 85, anos: '2+' },
+      { nome: 'Integrações Bancárias', nivel: 75, anos: '1+' },
     ]
   }
 ];
 
 const ferramentas = [
+  { nome: 'React & Next.js', categoria: 'Framework' },
+  { nome: 'Tailwind CSS', categoria: 'Styling' },
   { nome: 'Git & GitHub', categoria: 'Version Control' },
   { nome: 'VS Code', categoria: 'IDE' },
-  { nome: 'Composer', categoria: 'Package Manager' },
-  { nome: 'npm/yarn', categoria: 'Package Manager' },
-  { nome: 'MySQL Workbench', categoria: 'Database' },
+  { nome: 'Composer & npm', categoria: 'Package Manager' },
   { nome: 'Postman', categoria: 'API Testing' },
+  { nome: 'Docker', categoria: 'Containerization' },
   { nome: 'Linux', categoria: 'OS' },
-  { nome: 'Docker', categoria: 'DevOps' },
 ];
 
 const destaques = [
   {
     icone: Award,
-    titulo: 'Foco em Fintechs',
-    descricao: 'Experiência em desenvolvimento de soluções financeiras seguras e escaláveis'
+    titulo: 'Mobilidade Corporativa',
+    descricao: 'Sistemas premiados para força de vendas, logística e gestão em campo'
   },
   {
     icone: Server,
-    titulo: 'Full Stack',
-    descricao: 'Domínio completo do ciclo de desenvolvimento web'
+    titulo: 'Full Stack Developer',
+    descricao: 'Backend robusto com PHP/TypeScript e interfaces responsivas modernas'
   },
   {
     icone: Shield,
-    titulo: 'Segurança em Primeiro Lugar',
-    descricao: 'Implementação de melhores práticas de segurança em todas as aplicações'
+    titulo: 'Experiência Fintech',
+    descricao: 'Banking as a Service, integrações bancárias e sistemas de alta disponibilidade'
   }
 ];
 
@@ -90,7 +92,7 @@ export default function Skills() {
             Stack <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text">Tecnológico</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Especializado em desenvolvimento para Fintechs com foco em performance e segurança
+            Desenvolvedor Full Stack especializado em soluções de mobilidade corporativa, com experiência em sistemas críticos que impactam milhares de usuários
           </p>
         </motion.div>
 
