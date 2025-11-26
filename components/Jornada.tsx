@@ -1,60 +1,60 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lightbulb, Rocket, Target, TrendingUp, Heart, Code2, ChevronDown, ChevronUp, Clock, Zap, Briefcase, Users } from 'lucide-react';
+import { Lightbulb, Rocket, Target, TrendingUp, Heart, Code2, ChevronDown, ChevronUp, Zap, Briefcase, Users } from 'lucide-react';
 import { useState } from 'react';
 
 const etapasJornada = [
   {
     icone: Lightbulb,
-    titulo: 'O Despertar',
-    periodo: 'Antes de 2022',
-    descricao: 'Trabalhando em outras áreas, percebi que minha paixão estava em resolver problemas com tecnologia. A curiosidade por entender como as coisas funcionam "por trás dos panos" me levou a dar o primeiro passo.',
+    titulo: 'O Início',
+    periodo: '2008',
+    descricao: 'Tudo começou com um computador e muita curiosidade. Explorar cada pixel, cada programa, cada possibilidade. Games online me ensinaram trabalho em equipe. A internet me mostrou que não existem limites.',
     cor: 'from-yellow-400 to-orange-400',
     emoji: '💡',
-    imagem: '🌅',
+    imagem: '🎮',
   },
   {
     icone: Rocket,
-    titulo: 'A Decisão',
-    periodo: '2022',
-    descricao: 'Tomei a decisão mais importante: recomeçar. Não importava a idade, experiência anterior ou opinião alheia. Comecei do zero, estudando lógica de programação e me dedicando a aprender HTML, CSS e JavaScript.',
+    titulo: 'Criando & Aprendendo',
+    periodo: '2008-2017',
+    descricao: 'Rádio online, web design, cada projeto era uma aventura. Mesmo quando a conexão era desafio, a vontade de criar era maior. Aprendi que obstáculos não param quem realmente quer.',
     cor: 'from-blue-400 to-cyan-400',
     emoji: '🚀',
-    imagem: '⚡',
+    imagem: '🎨',
   },
   {
     icone: Code2,
-    titulo: 'Primeiros Passos',
-    periodo: '2022-2023',
-    descricao: 'Entrei como Suporte Técnico na Cabonnet, onde aprendi virtualização e gestão de projetos. Foi meu pé na porta da TI. Cada ticket resolvido era uma oportunidade de aprender algo novo.',
+    titulo: 'Formação',
+    periodo: '2017-2020',
+    descricao: 'Mudei para Presidente Prudente-SP e iniciei a faculdade. Sistemas de Informação, depois ADS. Aprendi a pensar como desenvolvedor, entender algoritmos, arquitetar soluções. A base que me transformaria em profissional.',
     cor: 'from-green-400 to-emerald-400',
-    emoji: '👣',
-    imagem: '🎯',
+    emoji: '📚',
+    imagem: '🎓',
   },
   {
     icone: Target,
-    titulo: 'A Virada',
-    periodo: '2023-2024',
-    descricao: 'Consegui minha primeira vaga como Desenvolvedor Júnior na Cronos! Trabalhando com PHP, HTML/CSS e JavaScript, finalmente estava fazendo o que amo. A síndrome do impostor bateu forte, mas persistência venceu.',
+    titulo: 'Primeiros Passos Profissionais',
+    periodo: '2020-2023',
+    descricao: 'Cabonnet, AllBytes, CronosBank. Cada empresa, um aprendizado único. Suporte, virtualização, desenvolvimento. Descobri que cada desafio aceito é uma nova habilidade conquistada. Evoluí rápido porque nunca parei de aprender.',
     cor: 'from-purple-400 to-violet-400',
-    emoji: '🎉',
-    imagem: '🏆',
+    emoji: '🎯',
+    imagem: '⚡',
   },
   {
     icone: TrendingUp,
-    titulo: 'Crescimento',
+    titulo: 'Desenvolvedor Júnior',
     periodo: '2024-Atual',
-    descricao: 'Na Microton, trabalho com tecnologias que impactam operações reais de Fintechs e logística. PHP, MySQL, TypeScript, Node.js - cada linha de código tem propósito. Aprendi que programar não é só escrever código, é resolver problemas.',
+    descricao: 'Na Microton, evoluo soluções de computação móvel e sistemas administrativos. PHP, TypeScript, Node.js, MySQL - tecnologias que impactam operações reais. Cada linha de código resolve um problema real, ajuda pessoas reais. É isso que me motiva.',
     cor: 'from-pink-400 to-rose-400',
     emoji: '📈',
     imagem: '💻',
   },
   {
     icone: Heart,
-    titulo: 'A Missão',
+    titulo: 'O Que Vem Por Aí',
     periodo: 'Futuro',
-    descricao: 'Meu objetivo é provar que nunca é tarde para recomeçar. Se você está pensando em migrar para programação, saiba: o mercado precisa de pessoas dedicadas, não de gênios. Disciplina > Talento.',
+    descricao: 'Continuar crescendo, compartilhar conhecimento, inspirar outros. Provar que dedicação supera qualquer obstáculo. Que a jornada de dev não tem um caminho único, mas sempre vale a pena.',
     cor: 'from-red-400 to-pink-400',
     emoji: '❤️',
     imagem: '🌟',
@@ -63,9 +63,9 @@ const etapasJornada = [
 
 const percepcoes = [
   {
-    titulo: 'Idade não define capacidade',
-    texto: 'Iniciei minha transição de carreira em um momento onde muitos já estavam consolidados. A diferença real está no seu nível de dedicação e consistência.',
-    icone: Clock,
+    titulo: 'Comece de onde você está',
+    texto: 'Não precisa ter todas as respostas antes de começar. O importante é dar o primeiro passo e aprender no caminho. Cada pequeno progresso conta.',
+    icone: Rocket,
     cor: 'from-purple-400 to-violet-400',
   },
   {
@@ -75,14 +75,14 @@ const percepcoes = [
     cor: 'from-blue-400 to-cyan-400',
   },
   {
-    titulo: 'Transferência de habilidades',
-    texto: 'Experiências anteriores são diferenciais. Comunicação, gestão de tempo, resolução de conflitos - soft skills são tão valiosas quanto hard skills.',
+    titulo: 'Habilidades transferíveis importam',
+    texto: 'Experiências anteriores são diferenciais. Comunicação, gestão de tempo, resolução de problemas - soft skills são tão valiosas quanto hard skills.',
     icone: Briefcase,
     cor: 'from-pink-400 to-rose-400',
   },
   {
-    titulo: 'Network é investimento',
-    texto: 'Construir relacionamentos com outros desenvolvedores acelera o crescimento. Compartilhe conhecimento, peça ajuda, colabore. Ninguém cresce sozinho.',
+    titulo: 'Comunidade acelera crescimento',
+    texto: 'Construir relacionamentos com outros desenvolvedores faz diferença. Compartilhe conhecimento, peça ajuda, colabore. Ninguém cresce sozinho.',
     icone: Users,
     cor: 'from-green-400 to-emerald-400',
   },
@@ -109,8 +109,8 @@ export default function Journey() {
             Minha <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text">Jornada</span>
           </h2>
           <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto mb-6 md:mb-8 px-2">
-            De uma área completamente diferente para desenvolvedor júnior. 
-            Uma história de recomeço, persistência e paixão por tecnologia.
+            17 anos explorando tecnologia. Da tela do primeiro computador aos sistemas que movem Fintechs. 
+            Uma jornada de paixão, persistência e transformação.
           </p>
 
           {/* Toggle Button */}
@@ -279,16 +279,16 @@ export default function Journey() {
           className="max-w-3xl mx-auto mt-12 md:mt-16 text-center bg-gradient-to-r from-purple-900/30 to-violet-900/30 rounded-xl md:rounded-2xl p-6 md:p-8 border border-purple-500/30"
         >
           <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
-            Você também está em transição?
+            Sua jornada começa agora
           </h3>
           <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6 leading-relaxed">
-            Se minha história te inspirou, quero te dizer: <strong className="text-purple-400">você consegue</strong>. 
-            Não importa sua idade, formação ou experiência anterior. O que importa é dar o primeiro passo, 
-            manter a disciplina e nunca parar de evoluir. A jornada é desafiadora, mas cada linha de código 
-            te aproxima do seu objetivo. Lembre-se: grandes conquistas começam com pequenas ações consistentes.
+            Minha jornada começou com curiosidade e um computador. Não foi linear, não foi fácil, mas foi real. 
+            <strong className="text-purple-400"> Cada desafio superado me tornou mais forte</strong>. 
+            Se você está começando, saiba: o caminho é único para cada um, mas a dedicação é universal. 
+            Começe. Erre. Aprenda. Repita. <strong className="text-purple-400">Consistência vence tudo</strong>.
           </p>
           <p className="text-xs md:text-sm text-gray-400 italic">
-            &ldquo;O melhor momento para começar foi ontem. O segundo melhor momento é agora.&rdquo;
+            &ldquo;Não é sobre o ponto de partida. É sobre a direção que você escolhe seguir.&rdquo;
           </p>
         </motion.div>
               </motion.div>
