@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, ArrowUp, Mail } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const anoAtual = new Date().getFullYear();
 
-  const scrollToTop = () => {
+  const voltarAoTopo = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-purple-500/20">
       {/* Botão de voltar ao topo */}
       <motion.button
-        onClick={scrollToTop}
+        onClick={voltarAoTopo}
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.9 }}
         className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-violet-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-all"
@@ -99,7 +99,7 @@ export default function Footer() {
           className="text-center"
         >
           <p className="text-gray-500 text-[11px] mb-1">Desenvolvido por Eduardo Bruno</p>
-          <p className="text-gray-600 text-[10px]">© {currentYear} Eduardo Bruno. Todos os direitos reservados.</p>
+          <p className="text-gray-600 text-[10px]">© {anoAtual} Eduardo Bruno. Todos os direitos reservados.</p>
         </motion.div>
       </div>
     </footer>

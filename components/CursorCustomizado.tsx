@@ -4,23 +4,23 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isPointer, setIsPointer] = useState(false);
+  const [posicaoMouse, setPosicaoMouse] = useState({ x: 0, y: 0 });
+  const [ehPonteiro, setEhPonteiro] = useState(false);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const atualizarPosicaoMouse = (e: MouseEvent) => {
+      setPosicaoMouse({ x: e.clientX, y: e.clientY });
       
-      const target = e.target as HTMLElement;
-      setIsPointer(
-        window.getComputedStyle(target).cursor === 'pointer' ||
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON'
+      const alvo = e.target as HTMLElement;
+      setEhPonteiro(
+        window.getComputedStyle(alvo).cursor === 'pointer' ||
+        alvo.tagName === 'A' ||
+        alvo.tagName === 'BUTTON'
       );
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => window.removeEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', atualizarPosicaoMouse);
+    return () => window.removeEventListener('mousemove', atualizarPosicaoMouse);
   }, []);
 
   return (
@@ -29,9 +29,9 @@ export default function CustomCursor() {
       <motion.div
         className="fixed w-4 h-4 rounded-full bg-purple-500 pointer-events-none z-[9999] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isPointer ? 1.5 : 1,
+          x: posicaoMouse.x - 8,
+          y: posicaoMouse.y - 8,
+          scale: ehPonteiro ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
@@ -44,9 +44,9 @@ export default function CustomCursor() {
       <motion.div
         className="fixed w-8 h-8 rounded-full border-2 border-purple-500 pointer-events-none z-[9998] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isPointer ? 1.8 : 1,
+          x: posicaoMouse.x - 16,
+          y: posicaoMouse.y - 16,
+          scale: ehPonteiro ? 1.8 : 1,
         }}
         transition={{
           type: "spring",

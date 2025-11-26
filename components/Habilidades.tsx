@@ -3,76 +3,76 @@
 import { motion } from 'framer-motion';
 import { Code2, Database, Shield, Server, Wrench, Award } from 'lucide-react';
 
-const skillCategories = [
+const categoriasHabilidades = [
   {
-    title: 'Backend & APIs',
-    icon: Code2,
-    color: 'from-purple-500 to-violet-600',
-    skills: [
-      { name: 'PHP', level: 90, years: '2+' },
-      { name: 'Node.js', level: 80, years: '1+' },
-      { name: 'TypeScript', level: 85, years: '1+' },
-      { name: 'JavaScript', level: 90, years: '2+' },
+    titulo: 'Backend & APIs',
+    icone: Code2,
+    cor: 'from-purple-500 to-violet-600',
+    habilidades: [
+      { nome: 'PHP', nivel: 90, anos: '2+' },
+      { nome: 'Node.js', nivel: 80, anos: '1+' },
+      { nome: 'TypeScript', nivel: 85, anos: '1+' },
+      { nome: 'JavaScript', nivel: 90, anos: '2+' },
     ]
   },
   {
-    title: 'Database & Storage',
-    icon: Database,
-    color: 'from-violet-500 to-indigo-600',
-    skills: [
-      { name: 'MySQL', level: 85, years: '2+' },
-      { name: 'SQL', level: 85, years: '2+' },
-      { name: 'Database Design', level: 80, years: '1+' },
+    titulo: 'Database & Storage',
+    icone: Database,
+    cor: 'from-violet-500 to-indigo-600',
+    habilidades: [
+      { nome: 'MySQL', nivel: 85, anos: '2+' },
+      { nome: 'SQL', nivel: 85, anos: '2+' },
+      { nome: 'Database Design', nivel: 80, anos: '1+' },
     ]
   },
   {
-    title: 'Frontend',
-    icon: Code2,
-    color: 'from-indigo-500 to-purple-600',
-    skills: [
-      { name: 'HTML5/CSS3', level: 90, years: '2+' },
-      { name: 'Responsive Design', level: 85, years: '2+' },
-      { name: 'UI/UX', level: 75, years: '1+' },
+    titulo: 'Frontend',
+    icone: Code2,
+    cor: 'from-indigo-500 to-purple-600',
+    habilidades: [
+      { nome: 'HTML5/CSS3', nivel: 90, anos: '2+' },
+      { nome: 'Responsive Design', nivel: 85, anos: '2+' },
+      { nome: 'UI/UX', nivel: 75, anos: '1+' },
     ]
   },
   {
-    title: 'Segurança & Infraestrutura',
-    icon: Shield,
-    color: 'from-purple-600 to-violet-700',
-    skills: [
-      { name: 'Segurança da Informação', level: 75, years: '1+' },
-      { name: 'Virtualização', level: 70, years: '1+' },
-      { name: 'Windows Server', level: 75, years: '1+' },
+    titulo: 'Segurança & Infraestrutura',
+    icone: Shield,
+    cor: 'from-purple-600 to-violet-700',
+    habilidades: [
+      { nome: 'Segurança da Informação', nivel: 75, anos: '1+' },
+      { nome: 'Virtualização', nivel: 70, anos: '1+' },
+      { nome: 'Windows Server', nivel: 75, anos: '1+' },
     ]
   }
 ];
 
-const tools = [
-  { name: 'Git & GitHub', category: 'Version Control' },
-  { name: 'VS Code', category: 'IDE' },
-  { name: 'Composer', category: 'Package Manager' },
-  { name: 'npm/yarn', category: 'Package Manager' },
-  { name: 'MySQL Workbench', category: 'Database' },
-  { name: 'Postman', category: 'API Testing' },
-  { name: 'Linux', category: 'OS' },
-  { name: 'Docker', category: 'DevOps' },
+const ferramentas = [
+  { nome: 'Git & GitHub', categoria: 'Version Control' },
+  { nome: 'VS Code', categoria: 'IDE' },
+  { nome: 'Composer', categoria: 'Package Manager' },
+  { nome: 'npm/yarn', categoria: 'Package Manager' },
+  { nome: 'MySQL Workbench', categoria: 'Database' },
+  { nome: 'Postman', categoria: 'API Testing' },
+  { nome: 'Linux', categoria: 'OS' },
+  { nome: 'Docker', categoria: 'DevOps' },
 ];
 
-const highlights = [
+const destaques = [
   {
-    icon: Award,
-    title: 'Foco em Fintechs',
-    description: 'Experiência em desenvolvimento de soluções financeiras seguras e escaláveis'
+    icone: Award,
+    titulo: 'Foco em Fintechs',
+    descricao: 'Experiência em desenvolvimento de soluções financeiras seguras e escaláveis'
   },
   {
-    icon: Server,
-    title: 'Full Stack',
-    description: 'Domínio completo do ciclo de desenvolvimento web'
+    icone: Server,
+    titulo: 'Full Stack',
+    descricao: 'Domínio completo do ciclo de desenvolvimento web'
   },
   {
-    icon: Shield,
-    title: 'Segurança em Primeiro Lugar',
-    description: 'Implementação de melhores práticas de segurança em todas as aplicações'
+    icone: Shield,
+    titulo: 'Segurança em Primeiro Lugar',
+    descricao: 'Implementação de melhores práticas de segurança em todas as aplicações'
   }
 ];
 
@@ -97,63 +97,63 @@ export default function Skills() {
 
         {/* Highlights */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
-          {highlights.map((highlight, index) => (
+          {destaques.map((destaque, index) => (
             <motion.div
-              key={highlight.title}
+              key={destaque.titulo}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-gradient-to-br from-purple-900/30 to-violet-900/30 rounded-xl p-6 border border-purple-500/20 text-center"
             >
-              <highlight.icon className="w-10 h-10 text-purple-400 mx-auto mb-3" />
-              <h3 className="text-white font-bold text-lg mb-2">{highlight.title}</h3>
-              <p className="text-gray-400 text-sm">{highlight.description}</p>
+              <destaque.icone className="w-10 h-10 text-purple-400 mx-auto mb-3" />
+              <h3 className="text-white font-bold text-lg mb-2">{destaque.titulo}</h3>
+              <p className="text-gray-400 text-sm">{destaque.descricao}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Skill Categories */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-          {skillCategories.map((category, categoryIndex) => (
+          {categoriasHabilidades.map((categoria, indiceCategorias) => (
             <motion.div
-              key={category.title}
+              key={categoria.titulo}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              transition={{ duration: 0.5, delay: indiceCategorias * 0.1 }}
               className="bg-slate-700/30 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-purple-500/50 transition-all"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                  <category.icon className="w-6 h-6 text-white" />
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${categoria.cor} flex items-center justify-center`}>
+                  <categoria.icone className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-white">{categoria.titulo}</h3>
               </div>
               
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
+                {categoria.habilidades.map((habilidade, indiceHabilidade) => (
                   <motion.div
-                    key={skill.name}
+                    key={habilidade.nome}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
+                    transition={{ duration: 0.3, delay: indiceHabilidade * 0.05 }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white font-medium">{skill.name}</span>
+                      <span className="text-white font-medium">{habilidade.nome}</span>
                       <div className="flex items-center gap-2">
-                        <span className="text-purple-400 text-sm font-semibold">{skill.years} anos</span>
-                        <span className="text-gray-400 text-sm">{skill.level}%</span>
+                        <span className="text-purple-400 text-sm font-semibold">{habilidade.anos} anos</span>
+                        <span className="text-gray-400 text-sm">{habilidade.nivel}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-slate-600/50 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
+                        whileInView={{ width: `${habilidade.nivel}%` }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
+                        transition={{ duration: 1, delay: indiceHabilidade * 0.1 }}
+                        className={`h-full bg-gradient-to-r ${categoria.cor} rounded-full`}
                       />
                     </div>
                   </motion.div>
@@ -176,9 +176,9 @@ export default function Skills() {
             Ferramentas & Plataformas
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {tools.map((tool, index) => (
+            {ferramentas.map((ferramenta, index) => (
               <motion.div
-                key={tool.name}
+                key={ferramenta.nome}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -187,8 +187,8 @@ export default function Skills() {
                 className="bg-slate-700/50 backdrop-blur-sm rounded-lg p-4 border border-slate-600 hover:border-purple-500/50 transition-all group"
               >
                 <div className="text-center">
-                  <p className="text-white font-semibold mb-1 group-hover:text-purple-400 transition-colors">{tool.name}</p>
-                  <p className="text-gray-400 text-xs">{tool.category}</p>
+                  <p className="text-white font-semibold mb-1 group-hover:text-purple-400 transition-colors">{ferramenta.nome}</p>
+                  <p className="text-gray-400 text-xs">{ferramenta.categoria}</p>
                 </div>
               </motion.div>
             ))}

@@ -2,19 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, XCircle, Sparkles } from 'lucide-react';
-import SocialLinks from './SocialLinks';
+import LinksSociais from './LinksSociais';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = useState({
-    name: '',
+  const [dadosFormulario, setDadosFormulario] = useState({
+    nome: '',
     email: '',
-    message: '',
+    mensagem: '',
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [isHovering, setIsHovering] = useState(false);
+  const [isPairando, setIsPairando] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ export default function Contact() {
       );
 
       setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setDadosFormulario({ nome: '', email: '', mensagem: '' });
       
       setTimeout(() => {
         setStatus('idle');
@@ -112,7 +112,7 @@ export default function Contact() {
             {/* Social Media (Reutilizável) */}
             <div>
               <h4 className="text-white font-bold mb-4">Redes Sociais</h4>
-              <SocialLinks variant="circle" />
+              <LinksSociais variant="circle" />
             </div>
           </motion.div>
 
@@ -154,8 +154,8 @@ export default function Contact() {
                 type="text"
                 id="name"
                 name="user_name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                value={dadosFormulario.nome}
+                onChange={(e) => setDadosFormulario({ ...dadosFormulario, nome: e.target.value })}
                 className="w-full px-4 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none transition-colors"
                 placeholder="Seu nome"
                 required
@@ -169,8 +169,8 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="user_email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                value={dadosFormulario.email}
+                onChange={(e) => setDadosFormulario({ ...dadosFormulario, email: e.target.value })}
                 className="w-full px-4 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none transition-colors"
                 placeholder="seu@email.com"
                 required
@@ -183,8 +183,8 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                value={dadosFormulario.mensagem}
+                onChange={(e) => setDadosFormulario({ ...dadosFormulario, mensagem: e.target.value })}
                 rows={6}
                 className="w-full px-4 py-3 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none transition-colors resize-none"
                 placeholder="Sua mensagem..."
@@ -196,12 +196,12 @@ export default function Contact() {
             {/* Botão de Envio */}
             <motion.div
               className="relative group"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
+              onMouseEnter={() => setIsPairando(true)}
+              onMouseLeave={() => setIsPairando(false)}
             >
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 rounded-lg blur-lg opacity-0 group-hover:opacity-75 transition-opacity duration-500"
-                animate={{ scale: isHovering ? [1, 1.05, 1] : 1 }}
+                animate={{ scale: isPairando ? [1, 1.05, 1] : 1 }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               />
               <motion.button
@@ -211,18 +211,18 @@ export default function Contact() {
                 whileHover={{ scale: status === 'sending' ? 1 : 1.01 }}
                 whileTap={{ scale: status === 'sending' ? 1 : 0.99 }}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600"
-                  animate={{ backgroundPosition: isHovering ? ['0% 50%', '100% 50%', '0% 50%'] : '0% 50%' }}
-                  transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                  style={{ backgroundSize: '200% 200%' }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  animate={{ x: isHovering ? ['-100%', '200%'] : '-100%' }}
-                  transition={{ duration: 1.5, repeat: isHovering ? Infinity : 0, ease: 'easeInOut', repeatDelay: 0.5 }}
-                />
-                {isHovering && (
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600"
+                animate={{ backgroundPosition: isPairando ? ['0% 50%', '100% 50%', '0% 50%'] : '0% 50%' }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                style={{ backgroundSize: '200% 200%' }}
+              />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                animate={{ x: isPairando ? ['-100%', '200%'] : '-100%' }}
+                transition={{ duration: 1.5, repeat: isPairando ? Infinity : 0, ease: 'easeInOut', repeatDelay: 0.5 }}
+              />
+              {isPairando && (
                   <>
                     {[...Array(6)].map((_, i) => (
                       <motion.div
@@ -253,36 +253,36 @@ export default function Contact() {
                   ) : (
                     <>
                       <motion.div
-                        animate={{ y: isHovering ? [0, -4, 0] : 0, rotate: isHovering ? [0, 5, -5, 0] : 0 }}
-                        transition={{ duration: 0.6, repeat: isHovering ? Infinity : 0, ease: 'easeInOut' }}
+                        animate={{ y: isPairando ? [0, -4, 0] : 0, rotate: isPairando ? [0, 5, -5, 0] : 0 }}
+                        transition={{ duration: 0.6, repeat: isPairando ? Infinity : 0, ease: 'easeInOut' }}
                       >
                         <Send className="w-5 h-5 text-white" />
                       </motion.div>
                       <motion.span className="text-white font-bold text-lg tracking-wide flex">
-                        {'Enviar Mensagem'.split('').map((letter, i) => (
+                        {'Enviar Mensagem'.split('').map((letra, i) => (
                           <motion.span
                             key={i}
-                            animate={{ y: isHovering ? [0, -2, 0] : 0 }}
-                            transition={{ duration: 0.5, repeat: isHovering ? Infinity : 0, delay: i * 0.03, ease: 'easeInOut' }}
+                            animate={{ y: isPairando ? [0, -2, 0] : 0 }}
+                            transition={{ duration: 0.5, repeat: isPairando ? Infinity : 0, delay: i * 0.03, ease: 'easeInOut' }}
                           >
-                            {letter === ' ' ? '\u00A0' : letter}
+                            {letra === ' ' ? '\u00A0' : letra}
                           </motion.span>
                         ))}
                       </motion.span>
                       <motion.div
-                        animate={{ rotate: isHovering ? 360 : 0, scale: isHovering ? [1, 1.2, 1] : 1 }}
-                        transition={{ rotate: { duration: 2, repeat: isHovering ? Infinity : 0, ease: 'linear' }, scale: { duration: 1, repeat: isHovering ? Infinity : 0, ease: 'easeInOut' } }}
+                        animate={{ rotate: isPairando ? 360 : 0, scale: isPairando ? [1, 1.2, 1] : 1 }}
+                        transition={{ rotate: { duration: 2, repeat: isPairando ? Infinity : 0, ease: 'linear' }, scale: { duration: 1, repeat: isPairando ? Infinity : 0, ease: 'easeInOut' } }}
                       >
                         <Sparkles className="w-5 h-5 text-white" />
                       </motion.div>
                     </>
                   )}
                 </div>
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"
-                  animate={{ opacity: isHovering ? [0.5, 1, 0.5] : 0 }}
-                  transition={{ duration: 1.5, repeat: isHovering ? Infinity : 0, ease: 'easeInOut' }}
-                />
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"
+                animate={{ opacity: isPairando ? [0.5, 1, 0.5] : 0 }}
+                transition={{ duration: 1.5, repeat: isPairando ? Infinity : 0, ease: 'easeInOut' }}
+              />
               </motion.button>
             </motion.div>
           </motion.form>

@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {
-  const [init, setInit] = useState(false);
+  const [inicializado, setInicializado] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
-      setInit(true);
+      setInicializado(true);
     });
   }, []);
 
-  if (!init) {
+  if (!inicializado) {
     return null;
   }
 

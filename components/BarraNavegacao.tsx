@@ -4,24 +4,24 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Home, User, Rocket, Code, Briefcase, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const navItems = [
-  { name: 'Início', href: '#', icon: Home },
-  { name: 'Sobre', href: '#about', icon: User },
-  { name: 'Jornada', href: '#journey', icon: Rocket },
-  { name: 'Skills', href: '#skills', icon: Code },
-  { name: 'Projetos', href: '#projects', icon: Briefcase },
-  { name: 'Contato', href: '#contact', icon: Mail },
+const itensNav = [
+  { nome: 'Início', href: '#', icone: Home },
+  { nome: 'Sobre', href: '#about', icone: User },
+  { nome: 'Jornada', href: '#journey', icone: Rocket },
+  { nome: 'Skills', href: '#skills', icone: Code },
+  { nome: 'Projetos', href: '#projects', icone: Briefcase },
+  { nome: 'Contato', href: '#contact', icone: Mail },
 ];
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('');
+  const [secaoAtiva, setSecaoAtiva] = useState('');
   const { scrollY } = useScroll();
-  const backgroundColor = useTransform(
+  const corDeFundo = useTransform(
     scrollY,
     [0, 100],
     ['rgba(15, 23, 42, 0)', 'rgba(15, 23, 42, 0.95)']
   );
-  const borderColor = useTransform(
+  const corDaBorda = useTransform(
     scrollY,
     [0, 100],
     ['rgba(139, 92, 246, 0)', 'rgba(139, 92, 246, 0.3)']
@@ -29,10 +29,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => {
-        const element = document.querySelector(item.href === '#' ? 'section' : item.href);
-        if (element) {
-          const rect = element.getBoundingClientRect();
+      const secoes = itensNav.map(item => {
+        const elemento = document.querySelector(item.href === '#' ? 'section' : item.href);
+        if (elemento) {
+          const rect = elemento.getBoundingClientRect();
           return {
             id: item.href,
             top: rect.top,
@@ -42,12 +42,12 @@ export default function Navbar() {
         return null;
       }).filter(Boolean);
 
-      const current = sections.find(section => 
-        section && section.top <= 100 && section.bottom > 100
+      const atual = secoes.find(secao => 
+        secao && secao.top <= 100 && secao.bottom > 100
       );
 
-      if (current) {
-        setActiveSection(current.id);
+      if (atual) {
+        setSecaoAtiva(atual.id);
       }
     };
 
@@ -58,9 +58,9 @@ export default function Navbar() {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const target = href === '#' ? document.querySelector('section') : document.querySelector(href);
-    if (target) {
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
+    const alvo = href === '#' ? document.querySelector('section') : document.querySelector(href);
+    if (alvo) {
+      const offsetTop = alvo.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({
         top: href === '#' ? 0 : offsetTop,
         behavior: 'smooth',
@@ -71,8 +71,8 @@ export default function Navbar() {
   return (
     <motion.nav
       style={{ 
-        backgroundColor,
-        borderColor,
+        backgroundColor: corDeFundo,
+        borderColor: corDaBorda,
       }}
       className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md"
     >
@@ -92,29 +92,29 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item, index) => {
-              const Icon = item.icon;
-              const isActive = activeSection === item.href;
+            {itensNav.map((item, index) => {
+              const Icone = item.icone;
+              const estaAtivo = secaoAtiva === item.href;
               
               return (
                 <motion.a
-                  key={item.name}
+                  key={item.nome}
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    isActive 
+                    estaAtivo 
                       ? 'text-purple-400' 
                       : 'text-gray-300 hover:text-purple-400'
                   }`}
                 >
                   <span className="flex items-center gap-2">
-                    <Icon className="w-4 h-4" />
-                    {item.name}
+                    <Icone className="w-4 h-4" />
+                    {item.nome}
                   </span>
-                  {isActive && (
+                  {estaAtivo && (
                     <motion.div
                       layoutId="activeSection"
                       className="absolute inset-0 bg-purple-500/10 rounded-lg border border-purple-500/30"
@@ -146,26 +146,26 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div id="mobile-menu" className="hidden md:hidden pb-4">
           <div className="flex flex-col gap-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = activeSection === item.href;
+            {itensNav.map((item) => {
+              const Icone = item.icone;
+              const estaAtivo = secaoAtiva === item.href;
               
               return (
                 <a
-                  key={item.name}
+                  key={item.nome}
                   href={item.href}
                   onClick={(e) => {
                     handleClick(e, item.href);
                     document.getElementById('mobile-menu')?.classList.add('hidden');
                   }}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                    isActive 
+                    estaAtivo 
                       ? 'bg-purple-500/10 text-purple-400 border border-purple-500/30' 
                       : 'text-gray-300 hover:bg-slate-800/50 hover:text-purple-400'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
-                  {item.name}
+                  <Icone className="w-4 h-4" />
+                  {item.nome}
                 </a>
               );
             })}

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react'; // mantido para possíveis usos futuros
-import SocialLinks from './SocialLinks';
+import LinksSociais from './LinksSociais';
 import Typewriter from 'typewriter-effect';
 
 export default function Hero() {
@@ -143,7 +143,7 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             className="mb-12"
           >
-            <SocialLinks variant="circle" animate />
+            <LinksSociais variant="circle" animate />
           </motion.div>
 
           {/* CTA Buttons */}

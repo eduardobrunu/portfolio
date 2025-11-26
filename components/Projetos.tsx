@@ -1,29 +1,29 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github as IconeGithub, Star } from 'lucide-react';
 import Image from 'next/image';
 
-const projects = [
+const projetos = [
   {
-    title: 'Empório Modelo',
-    description: 'Site institucional completo para e-commerce de produtos gourmet com carrinho flutuante, integração WhatsApp, galeria de produtos e Google Maps. Design elegante e responsivo.',
-    image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=600&fit=crop',
+    titulo: 'Empório Modelo',
+    descricao: 'Site institucional completo para e-commerce de produtos gourmet com carrinho flutuante, integração WhatsApp, galeria de produtos e Google Maps. Design elegante e responsivo.',
+    imagem: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=600&fit=crop',
     tags: ['HTML', 'CSS', 'JavaScript', 'WhatsApp API', 'Google Maps'],
     github: 'https://github.com/eduardobrunu/emporiomodelo',
     demo: 'https://eduardobrunu.github.io/emporiomodelo/',
-    featured: true,
-    inProgress: true,
+    destaque: true,
+    emDesenvolvimento: true,
   },
   {
-    title: 'SmartPay - Sistema de Pagamentos',
-    description: 'Plataforma completa de processamento de pagamentos para Fintechs com validação em tempo real, gestão de fraudes, dashboard analítico e integração multi-gateway. Desenvolvido com foco em segurança e performance.',
-    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop',
+    titulo: 'SmartPay - Sistema de Pagamentos',
+    descricao: 'Plataforma completa de processamento de pagamentos para Fintechs com validação em tempo real, gestão de fraudes, dashboard analítico e integração multi-gateway. Desenvolvido com foco em segurança e performance.',
+    imagem: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop',
     tags: ['PHP', 'MySQL', 'TypeScript', 'REST API', 'JWT', 'Segurança'],
     github: 'https://github.com/eduardobrunu/smartpay',
     demo: null,
-    featured: true,
-    inProgress: false,
+    destaque: true,
+    emDesenvolvimento: false,
   },
 ];
 
@@ -47,9 +47,9 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
+          {projetos.map((projeto, index) => (
             <motion.div
-              key={project.title}
+              key={projeto.titulo}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -60,8 +60,8 @@ export default function Projects() {
                 {/* Project Image */}
                 <div className="relative h-56 overflow-hidden">
                   <Image
-                    src={project.image}
-                    alt={project.title}
+                    src={projeto.imagem}
+                    alt={projeto.titulo}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -69,13 +69,13 @@ export default function Projects() {
                   
                   {/* Badges */}
                   <div className="absolute top-4 left-4 flex gap-2">
-                    {project.featured && (
+                    {projeto.destaque && (
                       <span className="px-3 py-1 bg-purple-500/90 backdrop-blur-sm text-white rounded-full text-xs font-semibold flex items-center gap-1">
                         <Star className="w-3 h-3" />
                         Destaque
                       </span>
                     )}
-                    {project.inProgress && (
+                    {projeto.emDesenvolvimento && (
                       <span className="px-3 py-1 bg-green-500/90 backdrop-blur-sm text-white rounded-full text-xs font-semibold">
                         Em Desenvolvimento
                       </span>
@@ -86,15 +86,15 @@ export default function Projects() {
                 {/* Project Content */}
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                    {project.title}
+                    {projeto.titulo}
                   </h3>
                   <p className="text-gray-400 mb-4 flex-1">
-                    {project.description}
+                    {projeto.descricao}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
+                    {projeto.tags.map((tag) => (
                       <span
                         key={tag}
                         className="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-sm border border-purple-500/20"
@@ -107,19 +107,19 @@ export default function Projects() {
                   {/* Links */}
                   <div className="flex gap-4">
                     <motion.a
-                      href={project.github}
+                      href={projeto.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-white transition-colors font-medium"
                     >
-                      <Github className="w-4 h-4" />
+                      <IconeGithub className="w-4 h-4" />
                       Código
                     </motion.a>
-                    {project.demo && (
+                    {projeto.demo && (
                       <motion.a
-                        href={project.demo}
+                        href={projeto.demo}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}

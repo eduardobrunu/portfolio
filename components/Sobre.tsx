@@ -3,33 +3,33 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
-const experiences = [
+const experiencias = [
   {
-    company: 'Microton',
-    role: 'Desenvolvedor Júnior',
-    period: 'Outubro 2024 - Atual',
-    location: 'Presidente Prudente, SP',
-    description: 'Desenvolvimento e evolução do WMS da Microton com foco em Fintechs e operações logísticas: estoque, pedidos, inventário e pallets. Entregas com PHP, MySQL, TypeScript e JavaScript para garantir escalabilidade e segurança.',
-    technologies: ['PHP', 'MySQL', 'TypeScript', 'JavaScript', 'Node.js', 'WMS'],
-    current: true,
+    empresa: 'Microton',
+    cargo: 'Desenvolvedor Júnior',
+    periodo: 'Outubro 2024 - Atual',
+    localizacao: 'Presidente Prudente, SP',
+    descricao: 'Desenvolvimento e evolução do WMS da Microton com foco em Fintechs e operações logísticas: estoque, pedidos, inventário e pallets. Entregas com PHP, MySQL, TypeScript e JavaScript para garantir escalabilidade e segurança.',
+    tecnologias: ['PHP', 'MySQL', 'TypeScript', 'JavaScript', 'Node.js', 'WMS'],
+    atual: true,
   },
   {
-    company: 'Cronos Soluções para Fintechs',
-    role: 'Desenvolvedor Júnior',
-    period: 'Junho 2023 - Junho 2024',
-    location: 'Presidente Prudente, SP',
-    description: 'Desenvolvimento com PHP, HTML/CSS e JavaScript. Aprimoramento de conhecimentos em segurança da informação e gestão de infraestrutura de TI, proporcionando soluções eficientes e seguras para o ambiente financeiro.',
-    technologies: ['PHP', 'HTML/CSS', 'JavaScript', 'Segurança da Informação', 'Infraestrutura TI'],
-    current: false,
+    empresa: 'Cronos Soluções para Fintechs',
+    cargo: 'Desenvolvedor Júnior',
+    periodo: 'Junho 2023 - Junho 2024',
+    localizacao: 'Presidente Prudente, SP',
+    descricao: 'Desenvolvimento com PHP, HTML/CSS e JavaScript. Aprimoramento de conhecimentos em segurança da informação e gestão de infraestrutura de TI, proporcionando soluções eficientes e seguras para o ambiente financeiro.',
+    tecnologias: ['PHP', 'HTML/CSS', 'JavaScript', 'Segurança da Informação', 'Infraestrutura TI'],
+    atual: false,
   },
   {
-    company: 'Cabonnet',
-    role: 'Suporte Técnico',
-    period: '2022 - 2023',
-    location: 'Presidente Prudente, SP',
-    description: 'Desenvolvimento de competências em virtualização e gestão de projetos de software. Experiência que permitiu construir uma base sólida para o crescimento na área de tecnologia.',
-    technologies: ['Virtualização', 'Gestão de Projetos', 'Suporte Técnico'],
-    current: false,
+    empresa: 'Cabonnet',
+    cargo: 'Suporte Técnico',
+    periodo: '2022 - 2023',
+    localizacao: 'Presidente Prudente, SP',
+    descricao: 'Desenvolvimento de competências em virtualização e gestão de projetos de software. Experiência que permitiu construir uma base sólida para o crescimento na área de tecnologia.',
+    tecnologias: ['Virtualização', 'Gestão de Projetos', 'Suporte Técnico'],
+    atual: false,
   },
 ];
 
@@ -81,9 +81,9 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Experiência Profissional</h3>
           <div className="space-y-6">
-            {experiences.map((exp, index) => (
+            {experiencias.map((experiencia, index) => (
               <motion.div
-                key={exp.company}
+                key={experiencia.empresa}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -92,35 +92,35 @@ export default function About() {
               >
                 <div className="flex flex-col items-start mb-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-xl font-bold text-white">{exp.role}</h4>
-                    {exp.current && (
+                    <h4 className="text-xl font-bold text-white">{experiencia.cargo}</h4>
+                    {experiencia.atual && (
                       <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
                         Atual
                       </span>
                     )}
                   </div>
                   <p className="text-purple-400 font-semibold flex items-center gap-2">
-                    <Briefcase className="w-4 h-4" /> {exp.company}
+                    <Briefcase className="w-4 h-4" /> {experiencia.empresa}
                   </p>
                   <div className="text-gray-400 text-sm flex flex-col md:flex-row md:gap-6 mt-2">
                     <p className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" /> {exp.period}
+                      <Calendar className="w-4 h-4" /> {experiencia.periodo}
                     </p>
                     <p className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" /> {exp.location}
+                      <MapPin className="w-4 h-4" /> {experiencia.localizacao}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-4 text-left">{exp.description}</p>
+                <p className="text-gray-300 leading-relaxed mb-4 text-left">{experiencia.descricao}</p>
 
                 <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
+                  {experiencia.tecnologias.map((tecnologia) => (
                     <span
-                      key={tech}
+                      key={tecnologia}
                       className="px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full text-sm border border-purple-500/20"
                     >
-                      {tech}
+                      {tecnologia}
                     </span>
                   ))}
                 </div>
@@ -138,21 +138,21 @@ export default function About() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16"
         >
           {[
-            { value: '450+', label: 'Seguidores' },
-            { value: '434+', label: 'Conexões' },
-            { value: '2+', label: 'Anos de Experiência' },
-            { value: '3', label: 'Empresas' },
-          ].map((stat, index) => (
+            { valor: '450+', rotulo: 'Seguidores' },
+            { valor: '434+', rotulo: 'Conexões' },
+            { valor: '2+', rotulo: 'Anos de Experiência' },
+            { valor: '3', rotulo: 'Empresas' },
+          ].map((estatistica, index) => (
             <motion.div
-              key={stat.label}
+              key={estatistica.rotulo}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="bg-gradient-to-br from-purple-900/30 to-violet-900/30 rounded-xl p-6 text-center border border-purple-500/20"
             >
-              <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
-              <p className="text-gray-400">{stat.label}</p>
+              <p className="text-3xl font-bold text-white mb-2">{estatistica.valor}</p>
+              <p className="text-gray-400">{estatistica.rotulo}</p>
             </motion.div>
           ))}
         </motion.div>

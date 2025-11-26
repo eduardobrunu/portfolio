@@ -1,10 +1,10 @@
-import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, LucideIcon } from 'lucide-react';
 
 export interface SocialItem {
   key: string;
   label: string;
   href: string;
-  icon: any; // lucide-react icon component
+  icon: LucideIcon; // lucide-react icon component
   brandClass: string; // tailwind class for icon color
   ringClass: string; // tailwind ring/border classes for hover
 }
