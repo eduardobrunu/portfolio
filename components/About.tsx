@@ -60,15 +60,15 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Desenvolvedor Júnior</h3>
-            <p className="text-gray-300 leading-relaxed mb-4">
+          <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600">
+            <h3 className="text-2xl font-bold text-white mb-4 text-center">Desenvolvedor Júnior</h3>
+            <p className="text-gray-300 leading-relaxed mb-4 text-left">
               Na Microton, traduzo requisitos da cadeia logística e financeira em APIs, rotinas de inventário e dashboards que suportam controle de estoque, pedidos e produtos com precisão operacional.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-6">
+            <p className="text-gray-300 leading-relaxed mb-6 text-left">
               Planejo entregas com PHP, MySQL e TypeScript, implementando automações que aumentam a resiliência do WMS e diminuem o tempo de resposta das solicitações em produção.
             </p>
-            <ul className="text-sm text-gray-300 space-y-2 max-w-xl mx-auto">
+            <ul className="text-sm text-gray-300 space-y-2 text-left list-none">
               <li>• Integrações bancárias e logísticas com foco em segurança e auditoria.</li>
               <li>• Testes automatizados, deploys contínuos e monitoramento proativo em ambientes críticos.</li>
               <li>• Conexão entre suporte técnico, produto e engenharia para resolver incidentes sem interrupção.</li>
@@ -78,7 +78,7 @@ export default function About() {
         </motion.div>
 
         {/* Experiências */}
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Experiência Profissional</h3>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
@@ -88,9 +88,9 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-purple-500/50 transition-all text-center"
+                className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-purple-500/50 transition-all"
               >
-                <div className="flex flex-col items-center mb-4">
+                <div className="flex flex-col items-start mb-4">
                   <div className="flex items-center gap-2 mb-1">
                     <h4 className="text-xl font-bold text-white">{exp.role}</h4>
                     {exp.current && (
@@ -102,7 +102,7 @@ export default function About() {
                   <p className="text-purple-400 font-semibold flex items-center gap-2">
                     <Briefcase className="w-4 h-4" /> {exp.company}
                   </p>
-                  <div className="text-gray-400 text-sm flex flex-col md:flex-row md:gap-6 items-center mt-2">
+                  <div className="text-gray-400 text-sm flex flex-col md:flex-row md:gap-6 mt-2">
                     <p className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" /> {exp.period}
                     </p>
@@ -112,9 +112,9 @@ export default function About() {
                   </div>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-4 text-center">{exp.description}</p>
+                <p className="text-gray-300 leading-relaxed mb-4 text-left">{exp.description}</p>
 
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
