@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eduardo Bruno | Desenvolvedor Júnior",
+  title: "Eduardo Bruno | Dev Jr",
   description: "Desenvolvedor Júnior especializado em PHP, TypeScript e JavaScript. Criando soluções inovadoras para Fintechs em Presidente Prudente, SP.",
 };
 

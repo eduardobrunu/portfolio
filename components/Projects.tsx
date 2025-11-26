@@ -39,7 +39,7 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Meus <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Projetos</span>
+            Meus <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text">Projetos</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Confira alguns dos projetos que desenvolvi com paixão e dedicação
@@ -124,7 +124,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 rounded-lg text-white transition-all font-medium shadow-lg shadow-purple-500/25"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 rounded-lg text-white transition-all font-medium shadow-lg shadow-purple-500/25"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Demo

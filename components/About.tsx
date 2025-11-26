@@ -9,8 +9,8 @@ const experiences = [
     role: 'Desenvolvedor Júnior',
     period: 'Outubro 2024 - Atual',
     location: 'Presidente Prudente, SP',
-    description: 'Desenvolvimento de soluções tecnológicas para o setor de Fintechs utilizando PHP, MySQL, TypeScript e JavaScript. Criação de soluções robustas e inovadoras que atendem às necessidades do mercado financeiro.',
-    technologies: ['PHP', 'MySQL', 'TypeScript', 'JavaScript', 'Node.js'],
+    description: 'Desenvolvimento e evolução do WMS da Microton com foco em Fintechs e operações logísticas: estoque, pedidos, inventário e pallets. Entregas com PHP, MySQL, TypeScript e JavaScript para garantir escalabilidade e segurança.',
+    technologies: ['PHP', 'MySQL', 'TypeScript', 'JavaScript', 'Node.js', 'WMS'],
     current: true,
   },
   {
@@ -40,15 +40,15 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Sobre <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">Mim</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Sobre <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text">Mim</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Conheça minha trajetória e experiências profissionais
+            Trajetória focada em transformar desafios regulatórios e operacionais das Fintechs em produtos digitais confiáveis e escaláveis.
           </p>
         </motion.div>
 
@@ -56,73 +56,65 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600">
+          <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Desenvolvedor Júnior</h3>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Sou um <span className="text-purple-400 font-semibold">Desenvolvedor Júnior</span> com experiência no desenvolvimento de soluções tecnológicas, 
-              com foco especial no setor de <span className="text-purple-400 font-semibold">Fintechs</span>.
+              Na Microton, traduzo requisitos da cadeia logística e financeira em APIs, rotinas de inventário e dashboards que suportam controle de estoque, pedidos e produtos com precisão operacional.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Atualmente trabalho na <span className="text-purple-400 font-semibold">Microton</span>, onde utilizo minhas habilidades em 
-              PHP, MySQL, TypeScript e JavaScript para criar soluções robustas e inovadoras que atendem às necessidades do mercado financeiro.
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Planejo entregas com PHP, MySQL e TypeScript, implementando automações que aumentam a resiliência do WMS e diminuem o tempo de resposta das solicitações em produção.
             </p>
-            <p className="text-gray-300 leading-relaxed">
-              Minha jornada na tecnologia me permitiu desenvolver uma visão completa do ciclo de desenvolvimento, desde o suporte técnico 
-              até a criação de aplicações complexas, sempre com foco em <span className="text-purple-400 font-semibold">segurança</span>, 
-              <span className="text-purple-400 font-semibold"> eficiência</span> e <span className="text-purple-400 font-semibold">inovação</span>.
-            </p>
+            <ul className="text-sm text-gray-300 space-y-2 max-w-xl mx-auto">
+              <li>• Integrações bancárias e logísticas com foco em segurança e auditoria.</li>
+              <li>• Testes automatizados, deploys contínuos e monitoramento proativo em ambientes críticos.</li>
+              <li>• Conexão entre suporte técnico, produto e engenharia para resolver incidentes sem interrupção.</li>
+              <li>• Mentoria e documentação para manutenção evolutiva das plataformas.</li>
+            </ul>
           </div>
         </motion.div>
 
         {/* Experiências */}
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">Experiência Profissional</h3>
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">Experiência Profissional</h3>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.company}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-purple-500/50 transition-all"
+                className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-6 border border-slate-600 hover:border-purple-500/50 transition-all text-center"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                  <div>
-                    <h4 className="text-xl font-bold text-white mb-1 flex items-center gap-2">
-                      {exp.role}
-                      {exp.current && (
-                        <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
-                          Atual
-                        </span>
-                      )}
-                    </h4>
-                    <p className="text-purple-400 font-semibold flex items-center gap-2">
-                      <Briefcase className="w-4 h-4" />
-                      {exp.company}
-                    </p>
+                <div className="flex flex-col items-center mb-4">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="text-xl font-bold text-white">{exp.role}</h4>
+                    {exp.current && (
+                      <span className="text-xs px-2 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
+                        Atual
+                      </span>
+                    )}
                   </div>
-                  <div className="text-gray-400 text-sm mt-2 md:mt-0 md:text-right">
-                    <p className="flex items-center gap-2 md:justify-end">
-                      <Calendar className="w-4 h-4" />
-                      {exp.period}
+                  <p className="text-purple-400 font-semibold flex items-center gap-2">
+                    <Briefcase className="w-4 h-4" /> {exp.company}
+                  </p>
+                  <div className="text-gray-400 text-sm flex flex-col md:flex-row md:gap-6 items-center mt-2">
+                    <p className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" /> {exp.period}
                     </p>
-                    <p className="flex items-center gap-2 md:justify-end mt-1">
-                      <MapPin className="w-4 h-4" />
-                      {exp.location}
+                    <p className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" /> {exp.location}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-4">
-                  {exp.description}
-                </p>
+                <p className="text-gray-300 leading-relaxed mb-4 text-center">{exp.description}</p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -141,7 +133,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16"
         >
@@ -155,9 +147,9 @@ export default function About() {
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 text-center border border-purple-500/20"
+              className="bg-gradient-to-br from-purple-900/30 to-violet-900/30 rounded-xl p-6 text-center border border-purple-500/20"
             >
               <p className="text-3xl font-bold text-white mb-2">{stat.value}</p>
               <p className="text-gray-400">{stat.label}</p>
