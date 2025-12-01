@@ -10,7 +10,7 @@ import BarraNavegacao from '@/components/BarraNavegacao';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-900 relative">
+    <main className="min-h-screen bg-slate-900 relative overflow-x-hidden">
       <BarraNavegacao />
       <FundoParticulas />
       <Heroi />

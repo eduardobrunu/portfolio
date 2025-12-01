@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0">
       {/* Animated Background with enhanced gradients */}
-      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
         <motion.div
           className="absolute inset-0"
           animate={{
@@ -24,7 +24,7 @@ export default function Hero() {
         />
         {/* Glow effects */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-purple-500/30 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -32,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-violet-500/30 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.5, 0.3, 0.5],
@@ -81,10 +81,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-6xl md:text-8xl font-black mb-6 tracking-tight"
+            className="text-5xl md:text-8xl font-black mb-6 tracking-tight"
           >
             <motion.span
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, type: 'spring' }}
               className="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 text-transparent bg-clip-text"
@@ -93,7 +93,7 @@ export default function Hero() {
             </motion.span>
             <motion.span 
               className="bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-500 text-transparent bg-clip-text"
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, type: 'spring' }}
             >
